@@ -1,0 +1,98 @@
+@use "sass:color";
+
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$dark-bg: #121212;
+$dark-text: #ffffff;
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background-color: $dark-bg;
+    color: $dark-text;
+}
+
+// Container aligned to left
+.container {
+    text-align: left;
+    margin: 20px;
+    max-width: 80%;
+}
+
+// Search Bar
+.search-bar {
+    width: 60%;
+    padding: 10px;
+    border: 2px solid $secondary-color;
+    border-radius: 5px;
+}
+
+// Dark Mode Toggle
+.theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+button {
+    padding: 8px 12px;
+    margin: 5px;
+    background-color: $secondary-color;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: color.scale($secondary-color, $lightness: -10%);
+}
+
+// Category Tabs (Left aligned)
+.category-tabs {
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 0;
+}
+
+.tab {
+    margin-right: 15px;
+    cursor: pointer;
+    color: $primary-color;
+}
+
+.tab.active {
+    font-weight: bold;
+    background-color: $primary-color;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+// Animal Gallery (Left-aligned)
+.animal-gallery {
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+// Animal Card Styling (Oval Images)
+.animal-card img {
+    width: 220px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50% / 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.animal-card img:hover {
+    transform: scale(1.1);
+}
